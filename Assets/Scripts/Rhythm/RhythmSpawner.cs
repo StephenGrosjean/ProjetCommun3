@@ -5,9 +5,19 @@ using UnityEngine;
 public class RhythmSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject groupToSpawn;
+   // [SerializeField] private float spawnRange;
+
+
+    private void Start()
+    {
+       Spawn();
+    }
 
     public void Spawn()
     {
-        Instantiate(groupToSpawn, transform.position, Quaternion.identity);
+        GameObject group = Instantiate(groupToSpawn, transform.position, Quaternion.identity);
+        group.transform.SetParent(transform);
+        //group.GetComponent<RhythmGroup>().SpawnRange = spawnRange;
+        //group.GetComponent<RhythmGroup>().Begin();
     }
 }

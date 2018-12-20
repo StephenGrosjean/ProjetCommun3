@@ -8,35 +8,39 @@ public class RhythmController : MonoBehaviour
 
     [SerializeField] private List<Transform> objOrder;
     [SerializeField] private bool asTouched;
+    [SerializeField] private GameObject particle;
 
-    public GameObject toDestroy;
 
+    private GameObject toDestroy;
+    
     private bool callOnce = true;
+    private bool startOnce = true;
 
     private Color gizmoColor;
 
-    private void Start()
-    {
-        gizmoColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));  
-    }
-
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
         if (toDestroy != null)
         {
             Gizmos.color = gizmoColor;
             Gizmos.DrawLine(transform.position, toDestroy.transform.position);
         }
+    }*/
+
+    private void Start()
+    {
+        gizmoColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
+
     }
 
     void Update()
     {
         if (asTouched && callOnce)
         {
+            StartDestroyAsign();
             callOnce = false;
             AsignToDestroy(objOrder[1].gameObject);
-            StartDestroyAsign(1);
-            Invoke("DOrder", 0.1f);
+            //Invoke("DOrder", 0.1f);
         }
     }
 
@@ -44,15 +48,12 @@ public class RhythmController : MonoBehaviour
     {
         objOrder = obj;
         objOrder = objOrder.OrderBy(x => Vector2.Distance(this.transform.position, x.transform.position)).ToList();
-
-        foreach(Transform o in objOrder){
-            Debug.Log(Vector2.Distance(this.transform.position, o.transform.position));
-        }
     }
     
 
-    public void StartDestroyAsign(int id)
+    public void StartDestroyAsign()
     {
+       int id = 1;
         foreach(Transform obj in objOrder)
         {
             if (obj != this && id < objOrder.Count)
@@ -71,19 +72,31 @@ public class RhythmController : MonoBehaviour
 
     void DOrder()
     {
-        StartCoroutine("DestroySequence", 0.2f);
+        StartCoroutine("DestroySequence", 0);
     }
 
-    public IEnumerator DestroySequence(float time)
+
+    public void DestroySequence()
     {
-        time += 0.2f;
-        Debug.Log("Order to destroy GM : " + gameObject.name + " in : " + time);
-        if (toDestroy != null)
-        {
-            toDestroy.GetComponent<RhythmController>().StartCoroutine("DestroySequence", time);
-        }
-        yield return new WaitForSeconds(time);
-        Debug.Log("Destroyed : " + gameObject.name);
+        Instantiate(particle, transform.position, Quaternion.identity);
+
         Destroy(gameObject);
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Bullet")
+        {
+            //GetComponent<SpriteRenderer>().enabled = false;
+            Instantiate(particle, transform.position, Quaternion.identity);
+            asTouched = true;
+            collision.rigidbody.isKinematic = true;
+            collision.collider.isTrigger = true;
+            collision.gameObject.GetComponent<Bullet>().BulletPong(objOrder);
+            collision.gameObject.GetComponent<Bullet>().Next(gameObject);
+
+            //Destroy(collision.gameObject);
+        }
     }
 }

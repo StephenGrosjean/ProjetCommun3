@@ -5,13 +5,45 @@ using UnityEngine;
 public class RhythmGroup : MonoBehaviour
 {
     [SerializeField] private List<Transform> groupObj;
+    [SerializeField] private GameObject rPart;
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private int partNumber;
+
+    [SerializeField] private float spawnRange;
+    public float SpawnRange
     {
-       foreach(Transform obj in groupObj)
+        set { spawnRange = value; }
+    }
+
+
+    /*private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(transform.position, 0.1f);
+    }*/
+
+    private void Awake()
+    {
+        for (int i = 0; i < partNumber; i++)
+        {
+            GameObject part = Instantiate(rPart, transform.position, Quaternion.identity);
+            part.transform.SetParent(transform);
+            groupObj.Add(part.transform);
+        }
+
+        foreach (Transform obj in groupObj)
+        {
+            obj.transform.position = Random.insideUnitCircle * spawnRange;
+        }
+
+        foreach (Transform obj in groupObj)
         {
             obj.GetComponent<RhythmController>().AsignOrder(groupObj);
-        } 
+        }
+    }
+
+    public void Begin()
+    {
+        
     }
 }
