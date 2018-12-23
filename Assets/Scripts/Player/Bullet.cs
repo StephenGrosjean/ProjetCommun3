@@ -6,6 +6,11 @@ public class Bullet : MonoBehaviour {
 
     [SerializeField] private float speed, step;
 
+    private int currentID;
+    public int CurrentID
+    {
+        get { return currentID; }
+    }
 
     private bool pongMode;
     private Transform destinationTransform;
@@ -16,6 +21,9 @@ public class Bullet : MonoBehaviour {
     private Vector2 LerpPos;
     private float moveTime;
 
+
+    private IDManager idManager;
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawSphere((Vector3)LerpPos, 0.1f);
@@ -23,6 +31,8 @@ public class Bullet : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        idManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<IDManager>();
+
         float angle = transform.localEulerAngles.z;
         Vector2 dir = new Vector2(Mathf.Cos(Mathf.Deg2Rad * angle), Mathf.Sin(Mathf.Deg2Rad * angle));
 
@@ -43,10 +53,20 @@ public class Bullet : MonoBehaviour {
 
     public void BulletPong(List<Transform> pos)
     {
+        
         poses = pos;
-        LerpPos = transform.position;
-        destinationTransform = poses[0];
-        pongMode = true;
+        currentID = poses[0].GetComponent<RhythmController>().RandomID;
+        if (!idManager.CheckIfUsed(currentID))
+        {
+            idManager.AddID(currentID);
+            LerpPos = transform.position;
+            destinationTransform = poses[0];
+            pongMode = true;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Next(GameObject obj)
@@ -58,12 +78,14 @@ public class Bullet : MonoBehaviour {
 
         if (i == poses.Count)
         {
+            idManager.RemoveID(currentID);
             Destroy(gameObject);
         }
         else
         {
             destinationTransform = poses[i];
         }
+        
     }
 
 
@@ -71,9 +93,26 @@ public class Bullet : MonoBehaviour {
     {
         if(collision.tag == "RhythmParticle")
         {
-            if(collision.gameObject == destinationTransform.gameObject)
+            if (collision.gameObject.GetComponent<RhythmController>().RandomID == currentID)
             {
+                if (collision.gameObject == destinationTransform.gameObject)
+                {
                     Next(collision.gameObject);
+                }
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "RhythmParticle")
+        {
+            if (collision.gameObject.GetComponent<RhythmController>().RandomID == currentID)
+            {
+                if (collision.gameObject == destinationTransform.gameObject && collision.gameObject.GetComponent<RhythmController>().RandomID == currentID)
+                {
+                    Next(collision.gameObject);
+                }
             }
         }
     }

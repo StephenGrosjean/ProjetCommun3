@@ -6,6 +6,8 @@ public class RhythmSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject groupToSpawn;
     [SerializeField] private float spawnRange;
+    [SerializeField] private Transform player;
+    [SerializeField] private int random;
 
     private void OnDrawGizmos()
     {
@@ -15,14 +17,29 @@ public class RhythmSpawner : MonoBehaviour
 
     private void Start()
     {
-       Spawn();
+       
+       //Spawn();
+    }
+
+    private void Update()
+    {
+        transform.position = player.position;
     }
 
     public void Spawn()
     {
+        random = Random.Range(-10000, 10000);
         GameObject group = Instantiate(groupToSpawn, transform.position, Quaternion.identity);
-        group.transform.position = Random.insideUnitCircle * spawnRange;
-       // group.transform.SetParent(transform);
+        Vector3 pos = Random.onUnitSphere + transform.position;
+        Debug.Log(pos);
+        float randomX = Random.Range(-spawnRange, spawnRange);
+        float randomY = Random.Range(-spawnRange, spawnRange);
+
+
+        group.transform.position = new Vector3(pos.x + randomX, pos.y + randomY, 0);
+        group.GetComponent<RhythmGroup>().RandomID = random;
+        random = 0;
+        //group.transform.SetParent(transform);
         //group.GetComponent<RhythmGroup>().SpawnRange = spawnRange;
         //group.GetComponent<RhythmGroup>().Begin();
     }

@@ -75,13 +75,14 @@ public class Ship : MonoBehaviour {
 
     void Shoot()
     {
-        Instantiate(shootPrefab, transform.position, transform.rotation);
+        GameObject bullet = Instantiate(shootPrefab, transform.position, transform.rotation);
+        bullet.name = "Bullet_" + Random.Range(0, 100).ToString();
     }
 
     IEnumerator shootDelay()
     {
         canShoot = false;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         canShoot = true;
     }
 }

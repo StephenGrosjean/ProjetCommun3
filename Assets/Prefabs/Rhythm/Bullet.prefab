@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -5
-  step: 3
+  step: 7
 --- !u!198 &198004012030555612
 ParticleSystem:
   m_ObjectHideFlags: 1
