@@ -34,7 +34,10 @@ public class Bullet : MonoBehaviour {
         if (pongMode)
         {
             moveTime += Time.deltaTime * step;
-            transform.position = Vector2.Lerp(LerpPos, destinationTransform.position,moveTime);
+            if (destinationTransform != null)
+            {
+                transform.position = Vector2.Lerp(LerpPos, destinationTransform.position, moveTime);
+            }
         }
     }
 

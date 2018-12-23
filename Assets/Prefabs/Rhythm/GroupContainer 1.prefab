@@ -53,5 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groupObj: []
   rPart: {fileID: 1873128893624244, guid: 791c12cd3487aa64fab3af17ab81ef3e, type: 2}
-  partNumber: 9
-  spawnRange: 3
+  partNumber: 4
+  spawnRange: 5

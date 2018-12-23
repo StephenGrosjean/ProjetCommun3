@@ -31,6 +31,8 @@ public class RhythmController : MonoBehaviour
     {
         gizmoColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
 
+
+
     }
 
     void Update()
@@ -86,7 +88,7 @@ public class RhythmController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet")
         {
             //GetComponent<SpriteRenderer>().enabled = false;
             Instantiate(particle, transform.position, Quaternion.identity);
@@ -98,5 +100,6 @@ public class RhythmController : MonoBehaviour
 
             //Destroy(collision.gameObject);
         }
+
     }
 }
