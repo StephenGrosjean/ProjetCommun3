@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4730043801068310}
   - component: {fileID: 198004012030555612}
   - component: {fileID: 199547638787994694}
+  - component: {fileID: 114971015359775600}
   m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
@@ -153,6 +154,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: -5
   step: 7
+  trail: {fileID: 4730043801068310}
+--- !u!114 &114971015359775600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1096167006759776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8024d3d50013c44ab0c97e21200bbe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 5
 --- !u!198 &198004012030555612
 ParticleSystem:
   m_ObjectHideFlags: 1

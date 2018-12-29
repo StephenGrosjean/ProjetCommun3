@@ -5,6 +5,7 @@ using System.Linq;
 
 public class RhythmController : MonoBehaviour
 {
+    [SerializeField] private ParticleSystem particleGlow;
     [SerializeField] private List<Transform> objOrder;
     [SerializeField] private bool asTouched;
     [SerializeField] private GameObject particle;
@@ -56,6 +57,12 @@ public class RhythmController : MonoBehaviour
 
         transform.position = Vector2.Lerp(transform.position, player.position, speed/1000);
         
+    }
+
+    public void SetColor(Color color)
+    {
+        //GetComponent<SpriteRenderer>().color = color;
+        //particleGlow.startColor = color;
     }
 
     public void AsignOrder(List<Transform> obj)
