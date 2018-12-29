@@ -3,27 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using SonicBloom.Koreo;
 
-public class EventSubscribe : MonoBehaviour {
-    [SerializeField] private string eventID;
+public class EventSubscribe : MonoBehaviour
+{
+    [SerializeField] private string[] eventIDs;
     [SerializeField] private RhythmSpawner rhythmSpawnerComponent;
+    [SerializeField] private BackgroundManager backgroundManager;
 
 
     void FireEventDebugLog(KoreographyEvent koreoEvent)
     {
-        rhythmSpawnerComponent.Spawn(koreoEvent.GetTextValue());
+        if (koreoEvent.GetTextValue() == "NB")
+        {
+            backgroundManager.NextBackground();
+        }
+        else
+        {
+            rhythmSpawnerComponent.Spawn(koreoEvent.GetTextValue());
+        }
     }
 
-    // Use this for initialization
-    void Start ()
+    void Start()
     {
-
-
-        Koreographer.Instance.RegisterForEvents(eventID, FireEventDebugLog);
+        foreach (string events in eventIDs)
+        {
+            Koreographer.Instance.RegisterForEvents(events, FireEventDebugLog);
+        }
 
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }

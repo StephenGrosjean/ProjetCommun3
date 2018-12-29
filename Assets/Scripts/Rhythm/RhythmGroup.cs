@@ -8,7 +8,7 @@ public class RhythmGroup : MonoBehaviour
     [SerializeField] private GameObject rPart;
     
     [SerializeField] private int partNumber;
-
+    
     [SerializeField] private float spawnRange;
     public float SpawnRange
     {
@@ -63,8 +63,11 @@ public class RhythmGroup : MonoBehaviour
         }
     }
 
-    public void Begin()
+    public void SetColor(Color color)
     {
-        
+        foreach (Transform obj in groupObj)
+        {
+            obj.GetComponent<RhythmController>().SetColor(color);
+        }
     }
 }

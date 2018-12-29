@@ -82,7 +82,7 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1873128893624244}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -139,11 +139,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7615e0479de5e7429172408824b2e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleGlow: {fileID: 198753750304735334}
   objOrder: []
   asTouched: 0
   particle: {fileID: 1445924518512410, guid: cb81dbac0a0c95b46aa1048cd7d5f5a9, type: 2}
   player: {fileID: 0}
-  speed: 0.001
+  speed: 1.7
   randomID: 0
 --- !u!198 &198753750304735334
 ParticleSystem:
