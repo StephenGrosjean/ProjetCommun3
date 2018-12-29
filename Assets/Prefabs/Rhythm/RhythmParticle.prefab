@@ -4660,8 +4660,8 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 7702a1da2d2acd74ea92680bb4511610, type: 2}
+  - {fileID: 2100000, guid: 7702a1da2d2acd74ea92680bb4511610, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4678,8 +4678,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1438999465
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_RenderMode: 3
   m_SortMode: 0

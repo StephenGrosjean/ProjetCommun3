@@ -5,11 +5,17 @@ using System.Linq;
 
 public class RhythmController : MonoBehaviour
 {
-
     [SerializeField] private List<Transform> objOrder;
     [SerializeField] private bool asTouched;
     [SerializeField] private GameObject particle;
-
+    [SerializeField] private Transform player;
+    [SerializeField] private float speed;
+    [SerializeField] private int randomID;
+    public int RandomID
+    {
+        get { return randomID; }
+        set { randomID = value; }
+    }
 
     private GameObject toDestroy;
     
@@ -17,19 +23,25 @@ public class RhythmController : MonoBehaviour
     private bool startOnce = true;
 
     private Color gizmoColor;
+    private Rigidbody2D rigid;
 
-    /*private void OnDrawGizmos()
+    private IDManager idManager;
+
+    private void OnDrawGizmos()
     {
-        if (toDestroy != null)
-        {
             Gizmos.color = gizmoColor;
-            Gizmos.DrawLine(transform.position, toDestroy.transform.position);
-        }
-    }*/
+            Gizmos.DrawLine(transform.position, player.position);
+        
+    }
 
     private void Start()
     {
+        
+        idManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<IDManager>();
         gizmoColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
+
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        rigid = GetComponent<Rigidbody2D>();
 
     }
 
@@ -40,8 +52,10 @@ public class RhythmController : MonoBehaviour
             StartDestroyAsign();
             callOnce = false;
             AsignToDestroy(objOrder[1].gameObject);
-            //Invoke("DOrder", 0.1f);
         }
+
+        transform.position = Vector2.Lerp(transform.position, player.position, speed/1000);
+        
     }
 
     public void AsignOrder(List<Transform> obj)
@@ -86,17 +100,21 @@ public class RhythmController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet")
         {
-            //GetComponent<SpriteRenderer>().enabled = false;
-            Instantiate(particle, transform.position, Quaternion.identity);
-            asTouched = true;
-            collision.rigidbody.isKinematic = true;
-            collision.collider.isTrigger = true;
-            collision.gameObject.GetComponent<Bullet>().BulletPong(objOrder);
-            collision.gameObject.GetComponent<Bullet>().Next(gameObject);
-
-            //Destroy(collision.gameObject);
+            if (!idManager.CheckIfUsed(randomID))
+            {
+                Instantiate(particle, transform.position, Quaternion.identity);
+                asTouched = true;
+                collision.rigidbody.isKinematic = true;
+                collision.collider.isTrigger = true;
+                collision.gameObject.GetComponent<Bullet>().BulletPong(objOrder);
+                collision.gameObject.GetComponent<Bullet>().Next(gameObject);
+            }
+            else
+            {
+                Destroy(collision.gameObject);
+            }
         }
     }
 }

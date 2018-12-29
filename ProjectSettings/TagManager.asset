@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bullet
   - RhythmParticle
+  - PosChecker
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - 
   - 
   - bullet
-  - 
+  - PosChecker
   - 
   - 
   - 
@@ -42,4 +43,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3492303913
+    locked: 0
+  - name: Level
+    uniqueID: 455051681
+    locked: 0
+  - name: Entity
+    uniqueID: 2855967831
+    locked: 0
+  - name: UI
+    uniqueID: 545707693
     locked: 0
