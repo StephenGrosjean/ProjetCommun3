@@ -8,6 +8,8 @@ public class Ship : MonoBehaviour {
     [SerializeField] private int speed;
     [SerializeField] private float maxVel;
     [SerializeField] private GameObject shootPrefab;
+    [SerializeField] private Transform shootPoint;
+
     private Rigidbody2D rigid;
     private int Vaxis, Haxis;
 
@@ -75,7 +77,7 @@ public class Ship : MonoBehaviour {
 
     void Shoot()
     {
-        GameObject bullet = Instantiate(shootPrefab, transform.position, transform.rotation);
+        GameObject bullet = Instantiate(shootPrefab, shootPoint.position, transform.rotation);
         bullet.name = "Bullet_" + Random.Range(0, 100).ToString();
     }
 

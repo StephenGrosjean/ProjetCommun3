@@ -29,9 +29,9 @@ public class RhythmSpawner : MonoBehaviour
     public void Spawn()
     {
         random = Random.Range(-10000, 10000);
-        GameObject group = Instantiate(groupToSpawn, transform.position, Quaternion.identity);
+        GameObject group = Instantiate(groupToSpawn, transform.position, Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 360.0f)));
         Vector3 pos = Random.onUnitSphere + transform.position;
-        Debug.Log(pos);
+
         float randomX = Random.Range(-spawnRange, spawnRange);
         float randomY = Random.Range(-spawnRange, spawnRange);
 
