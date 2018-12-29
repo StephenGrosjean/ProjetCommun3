@@ -10,8 +10,7 @@ public class EventSubscribe : MonoBehaviour {
 
     void FireEventDebugLog(KoreographyEvent koreoEvent)
     {
-        rhythmSpawnerComponent.Spawn();
-
+        rhythmSpawnerComponent.Spawn(koreoEvent.GetTextValue());
     }
 
     // Use this for initialization

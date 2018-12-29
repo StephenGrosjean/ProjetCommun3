@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour {
 
     [SerializeField] private float speed, step;
-
+    [SerializeField] private Transform trail;
     private int currentID;
     public int CurrentID
     {
@@ -65,7 +65,7 @@ public class Bullet : MonoBehaviour {
         }
         else
         {
-            Destroy(gameObject);
+            DestroyOrder();
         }
     }
 
@@ -79,7 +79,7 @@ public class Bullet : MonoBehaviour {
         if (i == poses.Count)
         {
             idManager.RemoveID(currentID);
-            Destroy(gameObject);
+            DestroyOrder();
         }
         else
         {
@@ -115,5 +115,11 @@ public class Bullet : MonoBehaviour {
                 }
             }
         }
+    }
+
+    private void DestroyOrder()
+    {
+        trail.SetParent(null);
+        Destroy(gameObject);
     }
 }

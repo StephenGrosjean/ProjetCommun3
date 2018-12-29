@@ -5,7 +5,6 @@ using System.Linq;
 
 public class RhythmController : MonoBehaviour
 {
-
     [SerializeField] private List<Transform> objOrder;
     [SerializeField] private bool asTouched;
     [SerializeField] private GameObject particle;
@@ -37,6 +36,7 @@ public class RhythmController : MonoBehaviour
 
     private void Start()
     {
+        
         idManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<IDManager>();
         gizmoColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
 
@@ -52,10 +52,9 @@ public class RhythmController : MonoBehaviour
             StartDestroyAsign();
             callOnce = false;
             AsignToDestroy(objOrder[1].gameObject);
-            //Invoke("DOrder", 0.1f);
         }
 
-        transform.position = Vector2.Lerp(transform.position, player.position, speed);
+        transform.position = Vector2.Lerp(transform.position, player.position, speed/1000);
         
     }
 

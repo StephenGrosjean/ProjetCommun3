@@ -17,8 +17,7 @@ public class RhythmSpawner : MonoBehaviour
 
     private void Start()
     {
-       
-       //Spawn();
+
     }
 
     private void Update()
@@ -26,19 +25,26 @@ public class RhythmSpawner : MonoBehaviour
         transform.position = player.position;
     }
 
-    public void Spawn()
+    public void Spawn(string koreoEvent)
     {
-        random = Random.Range(-10000, 10000);
-        GameObject group = Instantiate(groupToSpawn, transform.position, Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 360.0f)));
-        Vector3 pos = Random.onUnitSphere + transform.position;
 
-        float randomX = Random.Range(-spawnRange, spawnRange);
-        float randomY = Random.Range(-spawnRange, spawnRange);
+        switch (koreoEvent)
+        {
+            case "Normal":
+                random = Random.Range(-10000, 10000);
+                GameObject group = Instantiate(groupToSpawn, transform.position, Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 360.0f)));
+                Vector3 pos = Random.onUnitSphere + transform.position;
+
+                float randomX = Random.Range(-spawnRange, spawnRange);
+                float randomY = Random.Range(-spawnRange, spawnRange);
 
 
-        group.transform.position = new Vector3(pos.x + randomX, pos.y + randomY, 0);
-        group.GetComponent<RhythmGroup>().RandomID = random;
-        random = 0;
+                group.transform.position = new Vector3(pos.x + randomX, pos.y + randomY, 0);
+                group.GetComponent<RhythmGroup>().RandomID = random;
+                random = 0;
+                break;
+        }
+
         //group.transform.SetParent(transform);
         //group.GetComponent<RhythmGroup>().SpawnRange = spawnRange;
         //group.GetComponent<RhythmGroup>().Begin();

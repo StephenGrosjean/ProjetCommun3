@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4767965284720480}
   - component: {fileID: 114362743843491996}
   m_Layer: 0
-  m_Name: GroupContainer 1
+  m_Name: 10_Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,6 +53,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groupObj: []
   rPart: {fileID: 1873128893624244, guid: 791c12cd3487aa64fab3af17ab81ef3e, type: 2}
-  partNumber: 4
-  spawnRange: 5
+  partNumber: 10
+  spawnRange: 7
   randomID: 0
