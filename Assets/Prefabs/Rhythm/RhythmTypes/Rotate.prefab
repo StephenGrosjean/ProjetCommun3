@@ -139,6 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7615e0479de5e7429172408824b2e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventIDs:
+  - Single
   particleGlow: {fileID: 198753750304735334}
   objOrder: []
   asTouched: 0

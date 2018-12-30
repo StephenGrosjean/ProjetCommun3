@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using SonicBloom.Koreo;
 
 public class RhythmController : MonoBehaviour
 {
@@ -32,12 +33,10 @@ public class RhythmController : MonoBehaviour
     {
             Gizmos.color = gizmoColor;
             Gizmos.DrawLine(transform.position, player.position);
-        
     }
 
     private void Start()
     {
-        
         idManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<IDManager>();
         gizmoColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
 
@@ -55,9 +54,9 @@ public class RhythmController : MonoBehaviour
             AsignToDestroy(objOrder[1].gameObject);
         }
 
-        transform.position = Vector2.Lerp(transform.position, player.position, speed/1000);
-        
+        transform.position = Vector2.Lerp(transform.position, player.position, speed / 1000);
     }
+
 
     public void SetColor(Color color)
     {

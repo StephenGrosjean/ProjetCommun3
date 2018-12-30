@@ -53,7 +53,7 @@ public class RhythmSpawner : MonoBehaviour
                 Ten_Circle(colors[randomColorIndex]);
                 break;
 
-            case "single":
+            case "Single":
                 Single(colors[randomColorIndex]);
                 break;
 
