@@ -371,22 +371,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colors:
-  - {r: 0.28627452, g: 0, b: 1, a: 1}
-  - {r: 0.5246062, g: 0, b: 1, a: 1}
-  - {r: 0.92687035, g: 0, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0.7951522, a: 1}
-  - {r: 1, g: 0, b: 0.36862755, a: 1}
-  - {r: 1, g: 0.12164408, b: 0, a: 1}
-  - {r: 1, g: 0.5904733, b: 0, a: 1}
-  - {r: 1, g: 0.83542955, b: 0, a: 1}
-  - {r: 0.5982585, g: 1, b: 0, a: 1}
-  - {r: 0.19769835, g: 1, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0.5678592, a: 1}
-  - {r: 0, g: 1, b: 0.5863812, a: 1}
-  - {r: 0, g: 0.8595505, b: 1, a: 1}
-  - {r: 0, g: 0.68485904, b: 1, a: 1}
-  - {r: 0, g: 0.16084719, b: 1, a: 1}
+  - {r: 0, g: 0.46433306, b: 1, a: 1}
+  - {r: 0, g: 0.37738943, b: 1, a: 1}
+  - {r: 0, g: 0.7088356, b: 1, a: 1}
+  - {r: 0, g: 1, b: 0.95960426, a: 1}
+  - {r: 0, g: 1, b: 0.69134045, a: 1}
+  - {r: 0, g: 1, b: 0.42763233, a: 1}
+  - {r: 0.018116713, g: 1, b: 0, a: 1}
+  - {r: 0.5809742, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0.7325124, b: 0, a: 1}
+  - {r: 1, g: 0.33636326, b: 0, a: 1}
+  - {r: 1, g: 0.2878245, b: 0, a: 1}
   background: {fileID: 1903944764}
+  speed: 1
 --- !u!1 &311771849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,6 +999,10 @@ Prefab:
       propertyPath: colors.Array.data[14].g
       value: 0.33636326
       objectReference: {fileID: 0}
+    - target: {fileID: 1784057616003914, guid: 481d564123e66bf42842448d74024c9a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 481d564123e66bf42842448d74024c9a, type: 2}
   m_IsPrefabAsset: 0
@@ -1260,6 +1261,7 @@ MonoBehaviour:
   shootPrefab: {fileID: 1704032810067542, guid: 289b0c9213d20b848a6372c3c292bcce,
     type: 2}
   shootPoint: {fileID: 884275203}
+  delayFire: 0.5
 --- !u!212 &1791307516
 SpriteRenderer:
   m_ObjectHideFlags: 0

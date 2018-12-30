@@ -86,14 +86,14 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 50
   m_LinearDrag: 0.2
   m_AngularDrag: 0.2
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_Interpolate: 2
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &58637441562640820
 CircleCollider2D:
@@ -109,7 +109,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.13
+  m_Radius: 0.15
 --- !u!95 &95624595494595746
 Animator:
   serializedVersion: 3
@@ -144,7 +144,7 @@ MonoBehaviour:
   asTouched: 0
   particle: {fileID: 1445924518512410, guid: cb81dbac0a0c95b46aa1048cd7d5f5a9, type: 2}
   player: {fileID: 0}
-  speed: 1.7
+  speed: 1
   randomID: 0
 --- !u!198 &198753750304735334
 ParticleSystem:

@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 58637441562640820}
   - component: {fileID: 50342213018502532}
   m_Layer: 9
-  m_Name: Normal
+  m_Name: Radial
   m_TagString: RhythmParticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
   particleGlow: {fileID: 198753750304735334}
   objOrder: []
   asTouched: 0
-  particle: {fileID: 1445924518512410, guid: cb81dbac0a0c95b46aa1048cd7d5f5a9, type: 2}
+  particle: {fileID: 1445924518512410, guid: 7d8a0866936a7cc48888426e56f4ff5b, type: 2}
   player: {fileID: 0}
   speed: 1
   randomID: 0
