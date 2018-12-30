@@ -6,22 +6,23 @@ using UnityEngine.UI;
 public class BackgroundManager : MonoBehaviour {
     [SerializeField] private Color[] colors;
     [SerializeField] private Image background;
+    [SerializeField] private int speed;
 
     private int colorIndex = 0;
 
-    private Color currentColor;
+    float timeLeft;
+    Color targetColor;
 
     private void Start()
     {
         NextBackground();
     }
 
+
+
     public void NextBackground()
     {
-        Debug.Log("NXT_BCK");
-        currentColor = background.color;
-
-        if (colorIndex > colors.Length - 1)
+        if (colorIndex >= colors.Length - 1)
         {
             colorIndex = 0;
         }
@@ -33,6 +34,16 @@ public class BackgroundManager : MonoBehaviour {
 
     private void Update()
     {
-        background.color = Color.Lerp(currentColor, colors[colorIndex], Time.deltaTime*10);
+        if (timeLeft <= Time.deltaTime)
+        {
+            background.color = targetColor;
+            targetColor = colors[colorIndex];
+            timeLeft = 1.0f;
+        }
+        else
+        {
+            background.color = Color.Lerp(background.color, targetColor, Time.deltaTime / (timeLeft*speed));
+            timeLeft -= Time.deltaTime;
+        }
     }
 }

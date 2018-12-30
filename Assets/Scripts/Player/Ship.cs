@@ -9,6 +9,7 @@ public class Ship : MonoBehaviour {
     [SerializeField] private float maxVel;
     [SerializeField] private GameObject shootPrefab;
     [SerializeField] private Transform shootPoint;
+    [SerializeField] private float delayFire;
 
     private Rigidbody2D rigid;
     private int Vaxis, Haxis;
@@ -84,7 +85,7 @@ public class Ship : MonoBehaviour {
     IEnumerator shootDelay()
     {
         canShoot = false;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(delayFire);
         canShoot = true;
     }
 }
