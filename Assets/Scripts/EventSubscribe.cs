@@ -12,7 +12,7 @@ public class EventSubscribe : MonoBehaviour
 
     void FireEventDebugLog(KoreographyEvent koreoEvent)
     {
-        if (koreoEvent.GetTextValue() == "NB")
+        if (koreoEvent.GetTextValue() == "CB")
         {
             backgroundManager.NextBackground();
         }

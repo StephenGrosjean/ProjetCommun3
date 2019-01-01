@@ -3,18 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
+using UnityEngine.UI;
+using TMPro;
+
 public class GameManager : MonoBehaviour {
 
+    [Header("UI")]
+    [SerializeField] private TextMeshProUGUI scoreText;
+
+
+    [Header("Other")]
     [SerializeField] private GameObject looseMenu;
     [SerializeField] private AudioMixer mixer;
     [SerializeField] private AudioMixerSnapshot normalSnap, looseSnap;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+    [SerializeField] private int score;
+    public int Score
+    {
+        get { return score; }
+        set { score = value; }
+    }
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}
@@ -38,5 +46,11 @@ public class GameManager : MonoBehaviour {
         looseMenu.SetActive(true);
         looseSnap.TransitionTo(1f);
         //Time.timeScale = 0.1f;
+    }
+
+    public void IncrementScore(int incrementBy)
+    {
+        score += incrementBy;
+        scoreText.text = "Score : " + score.ToString();
     }
 }

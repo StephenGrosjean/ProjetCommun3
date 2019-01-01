@@ -26,8 +26,9 @@ public class RhythmController : MonoBehaviour
 
     private Color gizmoColor;
     private Rigidbody2D rigid;
-
     private IDManager idManager;
+    private GameManager gameManager;
+
 
     private void OnDrawGizmos()
     {
@@ -38,6 +39,8 @@ public class RhythmController : MonoBehaviour
     private void Start()
     {
         idManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<IDManager>();
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+
         gizmoColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -47,6 +50,7 @@ public class RhythmController : MonoBehaviour
 
     void Update()
     {
+
         if (asTouched && callOnce)
         {
             StartDestroyAsign();
@@ -99,7 +103,7 @@ public class RhythmController : MonoBehaviour
     public void DestroySequence()
     {
         Instantiate(particle, transform.position, Quaternion.identity);
-
+        gameManager.IncrementScore(10);
         Destroy(gameObject);
     }
 

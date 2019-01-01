@@ -56,7 +56,9 @@ public class RhythmSpawner : MonoBehaviour
             case "Single":
                 Single(colors[randomColorIndex]);
                 break;
-
+            case "10O":
+                 Ten_O(colors[randomColorIndex]);
+                break;
         }
 
         
@@ -126,4 +128,23 @@ public class RhythmSpawner : MonoBehaviour
         group.GetComponent<RhythmGroup>().SetColor(color);
         random = 0;
     }
+
+
+    void Ten_O(Color color)
+    {
+        random = Random.Range(-10000, 10000);
+        GameObject group = Instantiate(ten_C, transform.position, Quaternion.Euler(Random.Range(15.0f, 45.0f), Random.Range(15.0f, 45.0f), Random.Range(0.0f, 360.0f)));
+        Vector3 pos = Random.onUnitSphere + transform.position;
+
+        float randomX = Random.Range(-spawnRange, spawnRange);
+        float randomY = Random.Range(-spawnRange, spawnRange);
+
+
+        group.transform.position = new Vector3(pos.x + randomX, pos.y + randomY, 0);
+        group.GetComponent<RhythmGroup>().RandomID = random;
+        group.GetComponent<RhythmGroup>().SetColor(color);
+        random = 0;
+    }
+
+   
 }

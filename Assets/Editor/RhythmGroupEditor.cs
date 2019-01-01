@@ -2,7 +2,7 @@
 using UnityEditor;
 
 
-[CustomEditor(typeof(RhythmGroup))]
+//[CustomEditor(typeof(RhythmGroup))]
 public class RhythmGroupEditor : Editor {
 
     private bool Top_Right   , Top_Middle   , Top_Left;
