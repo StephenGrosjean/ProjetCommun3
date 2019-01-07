@@ -63,7 +63,9 @@ public class RhythmController : MonoBehaviour
             AsignToDestroy(objOrder[1].gameObject);
         }
 
-        transform.position = Vector2.Lerp(transform.position, player.position, speed / 1000);
+        if (Time.timeScale == 1) {
+            transform.position = Vector2.Lerp(transform.position, player.position, speed / 1000);
+        }
     }
 
 
