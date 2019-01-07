@@ -51,7 +51,6 @@ public class MenuController : MonoBehaviour {
 
     public void Pause() {
         pauseMenu.SetActive(!pauseMenu.active);
-        Debug.Log(Time.timeScale);
         if (Time.timeScale == 1) {
             Time.timeScale = 0;
         }
