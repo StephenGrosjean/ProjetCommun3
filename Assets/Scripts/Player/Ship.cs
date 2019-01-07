@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Ship : MonoBehaviour {
-
+    [SerializeField] private bool invincible;
     [SerializeField] private GameManager GM;
     [SerializeField] private int speed;
     [SerializeField] private float maxVel;
@@ -83,8 +83,10 @@ public class Ship : MonoBehaviour {
     {
         if(collision.gameObject.tag == "RhythmParticle")
         {
-            GM.LooseSequence();
-            Destroy(gameObject);
+            if (!invincible) {
+                GM.LooseSequence();
+                Destroy(gameObject);
+            }
         }
     }
 
