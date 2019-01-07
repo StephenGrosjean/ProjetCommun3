@@ -139,6 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7615e0479de5e7429172408824b2e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventIDs:
+  - Single
   particleGlow: {fileID: 198753750304735334}
   objOrder: []
   asTouched: 0
@@ -332,7 +334,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 0.42745098, b: 1, a: 1}
+      maxColor: {r: 1, g: 0.30588236, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4829,7 +4831,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 619cf78d126e51b44a870532daee1d55, type: 3}
-  m_Color: {r: 0, g: 0.42405367, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.30487967, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

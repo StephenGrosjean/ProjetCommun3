@@ -13,22 +13,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mEventID: Single
   mEventList:
-  - mStartSample: 898641
-    mEndSample: 898641
-  - mStartSample: 923603
-    mEndSample: 923603
-  - mStartSample: 948566
-    mEndSample: 948566
-  - mStartSample: 973528
-    mEndSample: 973528
-  - mStartSample: 998490
-    mEndSample: 998490
-  - mStartSample: 1023452
-    mEndSample: 1023452
-  - mStartSample: 1048415
-    mEndSample: 1048415
+  - mStartSample: 74886
+    mEndSample: 74886
+  - mStartSample: 124811
+    mEndSample: 124811
+  - mStartSample: 174735
+    mEndSample: 174735
+  - mStartSample: 224660
+    mEndSample: 224660
+  - mStartSample: 274584
+    mEndSample: 274584
+  - mStartSample: 324509
+    mEndSample: 324509
+  - mStartSample: 374433
+    mEndSample: 374433
+  - mStartSample: 424358
+    mEndSample: 424358
+  - mStartSample: 474283
+    mEndSample: 474283
+  - mStartSample: 524207
+    mEndSample: 524207
+  - mStartSample: 574132
+    mEndSample: 574132
+  - mStartSample: 624056
+    mEndSample: 624056
+  - mStartSample: 673981
+    mEndSample: 673981
+  - mStartSample: 723905
+    mEndSample: 723905
+  - mStartSample: 773830
+    mEndSample: 773830
+  - mStartSample: 823754
+    mEndSample: 823754
+  - mStartSample: 873679
+    mEndSample: 873679
   - mStartSample: 1073377
     mEndSample: 1073377
+  - mStartSample: 1123301
+    mEndSample: 1123301
+  - mStartSample: 1223150
+    mEndSample: 1223150
+  - mStartSample: 1323000
+    mEndSample: 1323000
+  - mStartSample: 1422849
+    mEndSample: 1422849
+  - mStartSample: 1522698
+    mEndSample: 1522698
+  - mStartSample: 1622547
+    mEndSample: 1622547
+  - mStartSample: 1672471
+    mEndSample: 1672471
+  - mStartSample: 1947056
+    mEndSample: 1947056
+  - mStartSample: 1972018
+    mEndSample: 1972018
+  - mStartSample: 1996981
+    mEndSample: 1996981
+  - mStartSample: 2096830
+    mEndSample: 2096830
+  - mStartSample: 2121792
+    mEndSample: 2121792
+  - mStartSample: 2146754
+    mEndSample: 2146754
   _SerializedPayloadTypes:
   - SonicBloom.Koreo.TextPayload
   _AssetPayloads: []
@@ -54,4 +100,27 @@ MonoBehaviour:
   - mTextVal: Single
   - mTextVal: Single
   - mTextVal: Single
-  _TextPayloadIdxs: 0000000001000000020000000300000004000000050000000600000007000000
+  - mTextVal: Single
+  - mTextVal: Single
+  - mTextVal: Single
+  - mTextVal: Single
+  - mTextVal: Single
+  - mTextVal: Single
+  - mTextVal: Single
+  - mTextVal: Single
+  - mTextVal: Single
+  - mTextVal: Single
+  - mTextVal: Single
+  - mTextVal: Single
+  - mTextVal: Single
+  - mTextVal: Single
+  - mTextVal: Single
+  - mTextVal: Single
+  - mTextVal: Single
+  - mTextVal: Single
+  - mTextVal: Single
+  - mTextVal: Single
+  - mTextVal: Single
+  - mTextVal: Single
+  - mTextVal: Single
+  _TextPayloadIdxs: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e000000

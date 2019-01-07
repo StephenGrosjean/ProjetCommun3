@@ -13,26 +13,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mEventID: 4C
   mEventList:
-  - mStartSample: 74886
-    mEndSample: 74886
-  - mStartSample: 99849
-    mEndSample: 99849
-  - mStartSample: 124811
-    mEndSample: 124811
-  - mStartSample: 149773
-    mEndSample: 149773
   - mStartSample: 174735
     mEndSample: 174735
-  - mStartSample: 199698
-    mEndSample: 199698
-  - mStartSample: 224660
-    mEndSample: 224660
-  - mStartSample: 249622
-    mEndSample: 249622
-  - mStartSample: 274584
-    mEndSample: 274584
-  - mStartSample: 299547
-    mEndSample: 299547
+  - mStartSample: 449320
+    mEndSample: 449320
+  - mStartSample: 748867
+    mEndSample: 748867
+  - mStartSample: 1023452
+    mEndSample: 1023452
+  - mStartSample: 1248113
+    mEndSample: 1248113
+  - mStartSample: 1547660
+    mEndSample: 1547660
+  - mStartSample: 2346452
+    mEndSample: 2346452
+  - mStartSample: 2521188
+    mEndSample: 2521188
+  - mStartSample: 2621037
+    mEndSample: 2621037
   _SerializedPayloadTypes:
   - SonicBloom.Koreo.TextPayload
   _AssetPayloads: []
@@ -59,5 +57,4 @@ MonoBehaviour:
   - mTextVal: 4C
   - mTextVal: 4C
   - mTextVal: 4C
-  - mTextVal: 4C
-  _TextPayloadIdxs: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+  _TextPayloadIdxs: 000000000100000002000000030000000400000005000000060000000700000008000000

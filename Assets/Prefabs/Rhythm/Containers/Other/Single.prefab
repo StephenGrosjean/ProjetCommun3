@@ -51,8 +51,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48be7d6eeef390c48b817dce0f1dcd06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Top_RightG: {fileID: 0}
+  Top_MiddleG: {fileID: 0}
+  Top_LeftG: {fileID: 0}
+  Middle_RightG: {fileID: 0}
+  Middle_MiddleG: {fileID: 0}
+  Middle_LeftG: {fileID: 0}
+  Bottom_RightG: {fileID: 0}
+  Bottom_MiddleG: {fileID: 0}
+  Bottom_LeftG: {fileID: 0}
+  noSpawner: 0
   groupObj: []
   rPart: {fileID: 1873128893624244, guid: b10e142a10ebee84786d0d948edcf082, type: 2}
   partNumber: 1
   spawnRange: 4
   randomID: 0
+  Range: 0

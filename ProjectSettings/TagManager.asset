@@ -7,6 +7,7 @@ TagManager:
   - Bullet
   - RhythmParticle
   - PosChecker
+  - ToDestroy
   layers:
   - Default
   - TransparentFX

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114559659962906798}
   m_Layer: 0
   m_Name: RhythmSpawner
-  m_TagString: Untagged
+  m_TagString: ToDestroy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,8 +51,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19b49cfdfc394e8fe918545ec8161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groupToSpawn: {fileID: 1414280365124878, guid: 557709c3fdabb3d4f88ef7e4f59c0602,
-    type: 2}
+  four_C: {fileID: 1414280365124878, guid: 557709c3fdabb3d4f88ef7e4f59c0602, type: 2}
+  six_C: {fileID: 1414280365124878, guid: a64c19215b534cc4fb5b7e66d22fae66, type: 2}
+  ten_C: {fileID: 1414280365124878, guid: 744a9c1334045cb4685835ebffeac520, type: 2}
+  normal_S: {fileID: 1414280365124878, guid: c595a8e2e9f9d12409bfa30cf35915f7, type: 2}
+  corner_S: {fileID: 1414280365124878, guid: f9f57bda0905a6548b2cf4f2dfb7187c, type: 2}
+  single: {fileID: 1414280365124878, guid: a89ac7bb8f3b3c744b1893c848537bb6, type: 2}
   spawnRange: 2
   player: {fileID: 0}
-  random: 0
+  colors:
+  - {r: 0.8117647, g: 0.96862745, b: 0.08235294, a: 1}
+  - {r: 0.627451, g: 0.09411765, b: 0.1764706, a: 1}
+  - {r: 0.3019608, g: 0.9882353, b: 0.07058824, a: 1}
+  - {r: 0.48235294, g: 0.050980393, b: 0.95686275, a: 1}
+  - {r: 0.7362523, g: 0, b: 1, a: 1}
+  - {r: 0.6521702, g: 0, b: 1, a: 1}
+  - {r: 0, g: 1, b: 0.508142, a: 1}
+  - {r: 1, g: 0.5058824, b: 0, a: 1}
+  - {r: 0.8022598, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0.325397, a: 1}
+  - {r: 0.41605854, g: 1, b: 0, a: 1}
+  - {r: 0.5371175, g: 1, b: 0, a: 1}
+  - {r: 0, g: 1, b: 0.4379561, a: 1}
+  - {r: 1, g: 0.6284153, b: 0, a: 1}
+  - {r: 1, g: 0.33636326, b: 0, a: 1}

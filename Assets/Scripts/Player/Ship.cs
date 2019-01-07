@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ship : MonoBehaviour {
 
-
+    [SerializeField] private GameManager GM;
     [SerializeField] private int speed;
     [SerializeField] private float maxVel;
     [SerializeField] private GameObject shootPrefab;
@@ -65,6 +65,8 @@ public class Ship : MonoBehaviour {
             StartCoroutine("shootDelay");
             Shoot();
         }
+
+        
     }
 
     private void FixedUpdate()
@@ -74,6 +76,16 @@ public class Ship : MonoBehaviour {
             rigid.AddForce(new Vector2(Haxis * speed, Vaxis * speed));
         }
        
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "RhythmParticle")
+        {
+            GM.LooseSequence();
+            Destroy(gameObject);
+        }
     }
 
     void Shoot()
