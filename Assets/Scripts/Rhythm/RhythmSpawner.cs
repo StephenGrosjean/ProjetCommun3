@@ -119,8 +119,8 @@ public class RhythmSpawner : MonoBehaviour
         GameObject group = Instantiate(single, transform.position, Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 360.0f)));
         Vector3 pos = Random.onUnitSphere + transform.position;
 
-        float randomX = Random.Range(-spawnRange, spawnRange);
-        float randomY = Random.Range(-spawnRange, spawnRange);
+        float randomX = Random.Range(Random.Range(-spawnRange, -0.7f), Random.Range(0.7f, spawnRange));
+        float randomY = Random.Range(Random.Range(-spawnRange, -0.7f), Random.Range(0.7f, spawnRange));
 
 
         group.transform.position = new Vector3(pos.x + randomX, pos.y + randomY, 0);

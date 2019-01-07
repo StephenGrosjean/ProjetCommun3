@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Audio;
 using SonicBloom.Koreo;
 
 public class RhythmController : MonoBehaviour
 {
+    [SerializeField] private AudioMixer mixer;
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip clip;
     [SerializeField] private ParticleSystem particleGlow;
     [SerializeField] private List<Transform> objOrder;
     [SerializeField] private bool asTouched;
@@ -38,6 +42,7 @@ public class RhythmController : MonoBehaviour
 
     private void Start()
     {
+        source = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
         idManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<IDManager>();
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
 
@@ -58,7 +63,9 @@ public class RhythmController : MonoBehaviour
             AsignToDestroy(objOrder[1].gameObject);
         }
 
-        transform.position = Vector2.Lerp(transform.position, player.position, speed / 1000);
+        if (Time.timeScale == 1) {
+            transform.position = Vector2.Lerp(transform.position, player.position, speed / 1000);
+        }
     }
 
 
@@ -104,6 +111,7 @@ public class RhythmController : MonoBehaviour
     {
         Instantiate(particle, transform.position, Quaternion.identity);
         gameManager.IncrementScore(10);
+        PlaySound();
         Destroy(gameObject);
     }
 
@@ -126,5 +134,9 @@ public class RhythmController : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
+    }
+
+    void PlaySound() {
+        source.PlayOneShot(clip);
     }
 }
