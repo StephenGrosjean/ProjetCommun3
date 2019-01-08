@@ -34,6 +34,12 @@ public class RhythmController : MonoBehaviour
     private GameManager gameManager;
     private RhythmGroup RG;
 
+    [SerializeField] private bool isBugged;
+    public int partNumber;
+    private bool canCheckBugged;
+    public List<Transform> currentObj;
+    public int objCount;
+
     private void OnDrawGizmos()
     {
             Gizmos.color = gizmoColor;
@@ -54,11 +60,10 @@ public class RhythmController : MonoBehaviour
 
     }
 
-    void Update()
-    {
+    void Update() {
 
-        if (asTouched && callOnce)
-        {
+
+        if (asTouched && callOnce) {
             StartDestroyAsign();
             callOnce = false;
             AsignToDestroy(objOrder[1].gameObject);
@@ -66,6 +71,22 @@ public class RhythmController : MonoBehaviour
 
         if (Time.timeScale == 1 && !RG.NoFollow) {
             transform.position = Vector2.Lerp(transform.position, player.position, speed / 1000);
+        }
+
+
+        if (!isBugged && canCheckBugged && gameObject.name != "Single") {
+            currentObj.Clear();
+            objCount = 0;
+            foreach (Transform obj in objOrder) {
+                if (obj != null) {
+                    currentObj.Add(obj);
+                }
+            }
+            objCount = currentObj.Count;
+
+            if (objCount < partNumber && !isBugged) {
+                StartCoroutine("DestroyIfBugged");
+            }
         }
     }
 
@@ -80,8 +101,14 @@ public class RhythmController : MonoBehaviour
     {
         objOrder = obj;
         objOrder = objOrder.OrderBy(x => Vector2.Distance(this.transform.position, x.transform.position)).ToList();
+
+        Invoke("tog", 0.5f);
     }
     
+    void tog() {
+        partNumber = objOrder.Count;
+        canCheckBugged = true;
+    }
 
     public void StartDestroyAsign()
     {
@@ -139,5 +166,11 @@ public class RhythmController : MonoBehaviour
 
     void PlaySound() {
         source.PlayOneShot(clip);
+    }
+
+    IEnumerator DestroyIfBugged() {
+        isBugged = true;
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
     }
 }
