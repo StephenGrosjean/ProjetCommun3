@@ -46,7 +46,7 @@ public class MenuController : MonoBehaviour {
     public void Menu() {
         normalSnap.TransitionTo(1f);
         Time.timeScale = 1;
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void Pause() {

@@ -1033,7 +1033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7617,7 +7617,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1122723806
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7775,7 +7775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1184660073
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12645,7 +12645,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1323510759
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14068,7 +14068,7 @@ MonoBehaviour:
   shootPrefab: {fileID: 1704032810067542, guid: 289b0c9213d20b848a6372c3c292bcce,
     type: 2}
   shootPoint: {fileID: 884275203}
-  delayFire: 0.1
+  delayFire: 1
 --- !u!212 &1791307516
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18889,7 +18889,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1843981014
 RectTransform:
   m_ObjectHideFlags: 0
