@@ -14061,7 +14061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a8306771c7904449acd7909df4f748e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invincible: 1
+  invincible: 0
   GM: {fileID: 291399885}
   speed: 20
   maxVel: 3

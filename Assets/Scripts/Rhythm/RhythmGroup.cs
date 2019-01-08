@@ -6,9 +6,9 @@ using UnityEditor;
 public class RhythmGroup : MonoBehaviour
 {
 
-    public GameObject Top_RightG, Top_MiddleG, Top_LeftG;
+    /*public GameObject Top_RightG, Top_MiddleG, Top_LeftG;
     public GameObject Middle_RightG, Middle_MiddleG, Middle_LeftG;
-    public GameObject Bottom_RightG, Bottom_MiddleG, Bottom_LeftG;
+    public GameObject Bottom_RightG, Bottom_MiddleG, Bottom_LeftG;*/
 
  
 
@@ -18,6 +18,12 @@ public class RhythmGroup : MonoBehaviour
         get { return noSpawner; }
         set { noSpawner = value; }
     }
+    [SerializeField] private bool noFollow;
+    public bool NoFollow {
+        get { return noFollow; }
+        set { noFollow = value; }
+    }
+
     [SerializeField] private List<Transform> groupObj;
     [SerializeField] private GameObject rPart;
     
@@ -46,10 +52,8 @@ public class RhythmGroup : MonoBehaviour
 
     private void Awake()
     {
-        if (!noSpawner)
-        {
-            for (int i = 0; i < partNumber; i++)
-            {
+        if (!noSpawner) {
+            for (int i = 0; i < partNumber; i++) {
                 GameObject part = Instantiate(rPart, transform.position, Quaternion.identity);
                 part.name = "R1_" + i.ToString();
                 part.transform.SetParent(transform);
@@ -57,20 +61,20 @@ public class RhythmGroup : MonoBehaviour
             }
 
             int a = 0;
-            foreach (Transform obj in groupObj)
-            {
+            foreach (Transform obj in groupObj) {
                 a++;
                 float x = Mathf.Cos(((Mathf.Deg2Rad * 360) / partNumber) * a);
                 float y = Mathf.Sin(((Mathf.Deg2Rad * 360) / partNumber) * a);
                 Vector2 pos = new Vector2(x, y);
                 obj.transform.localPosition = pos * spawnRange;
             }
-
-            foreach (Transform obj in groupObj)
-            {
+        }
+        if (partNumber != 0) {
+            foreach (Transform obj in groupObj) {
                 obj.GetComponent<RhythmController>().AsignOrder(groupObj);
             }
         }
+        
     }
 
     private void Start()

@@ -32,7 +32,7 @@ public class RhythmController : MonoBehaviour
     private Rigidbody2D rigid;
     private IDManager idManager;
     private GameManager gameManager;
-
+    private RhythmGroup RG;
 
     private void OnDrawGizmos()
     {
@@ -45,6 +45,7 @@ public class RhythmController : MonoBehaviour
         source = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
         idManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<IDManager>();
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        RG = transform.parent.GetComponent<RhythmGroup>();
 
         gizmoColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
 
@@ -63,7 +64,7 @@ public class RhythmController : MonoBehaviour
             AsignToDestroy(objOrder[1].gameObject);
         }
 
-        if (Time.timeScale == 1) {
+        if (Time.timeScale == 1 && !RG.NoFollow) {
             transform.position = Vector2.Lerp(transform.position, player.position, speed / 1000);
         }
     }

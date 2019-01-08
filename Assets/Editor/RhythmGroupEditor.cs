@@ -82,7 +82,7 @@ public class RhythmGroupEditor : Editor {
 
     void UpdateValues(RhythmGroup rg)
     {
-        if (rg.Top_LeftG != null)
+        /*if (rg.Top_LeftG != null)
         {
             rg.Top_LeftG.transform.position = new Vector3(-rg.Range, rg.Range, 0);
         }
@@ -122,6 +122,6 @@ public class RhythmGroupEditor : Editor {
         if (rg.Bottom_RightG != null)
         {
             rg.Bottom_RightG.transform.position = new Vector3(rg.Range, -rg.Range, 0);
-        }
+        }*/
     }
 }
