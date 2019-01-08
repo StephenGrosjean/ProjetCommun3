@@ -193,8 +193,12 @@ MonoBehaviour:
   asTouched: 0
   particle: {fileID: 1445924518512410, guid: cb81dbac0a0c95b46aa1048cd7d5f5a9, type: 2}
   player: {fileID: 0}
-  speed: 1
+  speed: 0.5
   randomID: 0
+  isBugged: 0
+  partNumber: 0
+  currentObj: []
+  objCount: 0
 --- !u!198 &198753750304735334
 ParticleSystem:
   m_ObjectHideFlags: 1

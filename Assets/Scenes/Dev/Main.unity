@@ -14068,7 +14068,7 @@ MonoBehaviour:
   shootPrefab: {fileID: 1704032810067542, guid: 289b0c9213d20b848a6372c3c292bcce,
     type: 2}
   shootPoint: {fileID: 884275203}
-  delayFire: 0.1
+  delayFire: 0.5
 --- !u!212 &1791307516
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14182,7 +14182,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8027344, y: 0.6816406}
+    oldSize: {x: 0.8125, y: 0.6796875}
     newSize: {x: 4.11, y: 3.49}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
